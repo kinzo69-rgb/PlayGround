@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#070914" />
+  <title>ASTRA: The Last Oath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="game-shell">
+    <canvas id="game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Astra home"><span class="brand-mark">✳</span> AFTERLIGHT <span class="brand-divider">/</span> <span class="brand-sub">CHAPTER 01</span></a>
+      <div class="mission"><span class="live-dot"></span><span>THE SHATTERED THRONE</span><span class="mission-sep">—</span><span id="objective">SURVIVE THE GODFALL</span></div>
+      <button id="sound-button" class="icon-button" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+
+    <section class="boss-hud" aria-label="Boss health">
+      <div class="boss-title"><span class="boss-kicker">THE FIRST BETRAYER</span><strong>VARKHOS <i>THE HOLLOW SUN</i></strong></div>
+      <div class="boss-health"><div id="boss-health-fill"></div><div class="boss-phase-line"></div></div>
+      <div class="boss-meta"><span>ANCIENT // REALITY WARDEN</span><span id="phase-label">PHASE I · AWAKENING</span></div>
+    </section>
+
+    <div id="chapter-card" class="chapter-card">
+      <div class="chapter-overline"><span>THE LAST OATH</span><span>01 — 03</span></div>
+      <h1>WHEN<br><em>STARS</em><br>FALL.</h1>
+      <div class="chapter-rule"></div>
+      <p>The god who made the dawn has come to unmake it.</p>
+      <button id="start-button" class="start-button">ENTER THE FRACTURE <span>↗</span></button>
+      <div class="chapter-foot"><span>AN ORIGINAL COSMIC ACTION TALE</span><span>3D · PLAYABLE</span></div>
+    </div>
+
+    <div id="intro-flash" class="intro-flash hidden"><span>ONE OATH. ONE LAST DAWN.</span></div>
+    <div id="toast" class="toast"></div>
+    <div id="qte" class="qte hidden"><div class="qte-ring"><span id="qte-key">E</span></div><div><b>BREAK THE SEAL</b><small>PRESS THE SHOWN KEY</small></div></div>
+    <div id="ultimate-banner" class="ultimate-banner hidden">THE <i>STARHEART</i> AWAKENS</div>
+
+    <footer class="combat-hud">
+      <div class="player-readout">
+        <div class="portrait"><span>✦</span><b>KAEL</b></div>
+        <div class="vitals"><div class="vital-label"><span>VITALITY</span><span id="player-health-text">100</span></div><div class="vital-track"><div id="player-health-fill"></div></div><div class="vital-label rage-label"><span>STARHEART <small>— RAGE</small></span><span id="rage-text">0%</span></div><div class="vital-track rage-track"><div id="rage-fill"></div></div></div>
+      </div>
+      <div class="ability-row">
+        <div class="ability"><kbd>J</kbd><span>STRIKE</span><i class="strike-icon">✧</i></div>
+        <div class="ability"><kbd>K</kbd><span>BURST</span><i>⌁</i></div>
+        <div class="ability"><kbd>SPACE</kbd><span>VEER</span><i>↗</i></div>
+        <div class="ability ultimate"><kbd>U</kbd><span>AWAKEN</span><i>✹</i></div>
+      </div>
+      <div class="combo-readout"><b id="combo-count">00</b><span>IMPACT</span><small id="combo-word">BUILD YOUR OATH</small></div>
+    </footer>
+
+    <div class="mobile-controls" aria-label="Touch controls">
+      <div class="stick-zone" id="stick-zone"><div class="stick-base"><div id="stick" class="stick"></div></div></div>
+      <div class="touch-actions">
+        <button class="touch-btn burst-btn" data-action="burst"><span>✦</span><small>BURST</small></button>
+        <button class="touch-btn dash-btn" data-action="dash"><span>↗</span><small>VEER</small></button>
+        <button class="touch-btn strike-btn" data-action="attack"><span>✧</span><small>STRIKE</small></button>
+        <button class="touch-btn ult-btn" data-action="ultimate"><span>✹</span><small>AWAKEN</small></button>
+      </div>
+    </div>
+
+    <div id="pause-overlay" class="pause-overlay hidden"><div class="pause-card"><span>THE COSMOS CAN WAIT</span><h2>PAUSED</h2><button id="resume-button">RETURN TO BATTLE</button></div></div>
+    <div class="corner-note"><span>WASD / ARROWS</span><span>MOVE · FIND THE OPENING</span><kbd>ESC</kbd></div>
+  </div>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
